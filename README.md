@@ -3,14 +3,15 @@
 using ssh, caddy, and the cloud provider of your choice - spin up 1 virtual machine to proxy all your local services without exposing your external gateway.
 
 ---
-# Steps:
+## Steps:
 1. Start Service on local server
 2. Enable systemd service to handle tunnel
 3. logon to remote server
 4. edit /etc/caddy/Caddyfile
 5. add a reverse proxy to your desired url and the local port forwarded.
 ---
-# Template systemd:
+## Template systemd:
+```bash
 [Unit]
 Description=ssh tunnel to proxy server 
 
@@ -23,8 +24,11 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
+```
 ---
-#Template Caddyfile:
+## Template Caddyfile:
+```bash
 test.example.com {
 	reverse_proxy 127.0.0.1:$service_port
 }
+```
