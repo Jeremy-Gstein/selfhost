@@ -3,7 +3,7 @@
 using ssh, caddy, and the cloud provider of your choice - spin up 1 virtual machine to proxy all your local services without exposing your external gateway.
 
 ## Diagram:
-![ diagram of 4 locations. Homelab, DigitalOcean, Cloudflare, and Client/User. ](https://git.j51b5.me/jg/selfhost/src/commit/ede07108e130241c5c0f9d2097af22c76b58f04f/ssh-tunnel.drawio.png)
+![ diagram of 4 locations. Homelab, DigitalOcean, Cloudflare, and Client/User. ](https://git.j51b5.me/jg/selfhost/raw/commit/ede07108e130241c5c0f9d2097af22c76b58f04f/ssh-tunnel.drawio.png)
 
 ---
 ## Steps:
