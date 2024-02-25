@@ -14,10 +14,8 @@ I started this project trying to find an alternative to proxy hosting services l
 Say you have a webserver running locally on port 8080. For external machines to access this we need a simple way to view the web service.
 Using a cloud VPC (Virtual Machine running in the Cloud [AWS, Azure, Digital Ocean, etc...]) we can use this public IP address instead of our public IP address.
 
----
-
 ## Diagram:
-![ diagram of 4 locations. Homelab, DigitalOcean, Cloudflare, and Client/User. ](https://git.j51b5.me/jg/selfhost/raw/commit/ede07108e130241c5c0f9d2097af22c76b58f04f/ssh-tunnel.drawio.png)
+![ diagram of 4 locations. Homelab, DigitalOcean, Cloudflare, and Client/User. ](https://github.com/Jeremy-Gstein/selfhost/blob/ba636190b37cfa9c21c3c5b5742f4358c210e879/ssh-tunnel.drawio.png)
 
 ---
 ## Steps:
@@ -28,6 +26,7 @@ Using a cloud VPC (Virtual Machine running in the Cloud [AWS, Azure, Digital Oce
 5. add a reverse proxy to your desired url and the local port forwarded.
 ---
 ## Template systemd:
+
 ```bash
 [Unit]
 Description=ssh tunnel to proxy server 
@@ -42,10 +41,16 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 ```
+
 ---
+
 ## Template Caddyfile:
+
 ```bash
 test.example.com {
 	reverse_proxy 127.0.0.1:$service_port
 }
+
 ```
+
+---
