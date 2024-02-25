@@ -2,6 +2,20 @@
 
 using ssh, caddy, and the cloud provider of your choice - spin up 1 virtual machine to proxy all your local services without exposing your external gateway.
 
+### The Goal: 
+- host locally without forwarding ports on external gateway.
+- no ddns
+- no port forwarding
+- mask your public IP address
+- available without manual intervention
+
+### Motivation:
+I started this project trying to find an alternative to proxy hosting services like ngrok.
+Say you have a webserver running locally on port 8080. For external machines to access this we need a simple way to view the web service.
+Using a cloud VPC (Virtual Machine running in the Cloud [AWS, Azure, Digital Ocean, etc...]) we can use this public IP address instead of our public IP address.
+
+---
+
 ## Diagram:
 ![ diagram of 4 locations. Homelab, DigitalOcean, Cloudflare, and Client/User. ](https://git.j51b5.me/jg/selfhost/raw/commit/ede07108e130241c5c0f9d2097af22c76b58f04f/ssh-tunnel.drawio.png)
 
